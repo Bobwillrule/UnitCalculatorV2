@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.unitcalculatorv2.model.ExpressionEvaluator
 import com.example.unitcalculatorv2.ui.theme.UnitCalculatorV2Theme
 
 class MainActivity : ComponentActivity() {
@@ -32,8 +33,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
+    val expr = "3 + 4 * 2 / (1 - 5)^2"
+    val result = ExpressionEvaluator.evaluate(expr)
+
     Text(
-        text = "Hello $name!",
+        text = "Expression: $expr\nResult: $result",
         modifier = modifier
     )
 }
