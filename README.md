@@ -36,6 +36,25 @@ In this version we implemented:
 
 ---
 
+## App inspiration
+
+Woodworking is one of my hobbies but I frequently encountered an inconvenience. In woodworking we frequently had to convert different units to one another. Metric to metric was doable with quick mental math, but especially in Canada, where a weird mix of imperial and metric units are especially prevalent and having a calculator would be less error prone than mental math, unit conversion could be hard without the help of technology. 
+
+The Problem:
+To convert to units, many of the online tools such as www.unitconverters.net only allowed you to convert units between a specific set of units.
+
+What do I mean by this?
+The steps I would need to take to calculate 6in + 5cm +10mm
+1. convert 6 in to 152.4mm
+2. switch the desired conversion pair from in -> mm to cm ->mm on online tools
+3. convert 5 cm to 50mm
+4. Evaluate 152.4mm + 50mm +10mm in my calculator
+5. Further swich the answer of 212.4mm to in or cm if I want
+
+To make steps 1 to 5 into only one input, I created the unit Calculator
+
+---
+
 ## Example Usage
 
 | Expression        | Result        |
