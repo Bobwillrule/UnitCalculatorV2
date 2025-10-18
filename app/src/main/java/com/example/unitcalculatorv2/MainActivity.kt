@@ -17,35 +17,25 @@ import com.example.unitcalculatorv2.ui.theme.UnitCalculatorV2Theme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             UnitCalculatorV2Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                CalculatorApp() // from CalculatorScreen.kt
             }
         }
     }
 }
 
 @Composable
+fun CalculatorApp() {
+        CalculatorScreen()
+    }
+@Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    val expr = "3 + 4 * 2 / (1 - 5)^2"
+    val expr = "3cm + 4mm * 2cat / (1tree - 5not)^2"
     val result = ExpressionEvaluator.evaluate(expr)
 
     Text(
         text = "Expression: $expr\nResult: $result",
         modifier = modifier
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    UnitCalculatorV2Theme {
-        Greeting("Android")
-    }
 }

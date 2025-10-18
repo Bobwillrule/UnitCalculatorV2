@@ -50,6 +50,7 @@ fun InToPost(tokens: List<Token>): List<Token> {
                     stack.pop()
                 }
             }
+            TokenType.UNIT -> continue
         }
     }
 
