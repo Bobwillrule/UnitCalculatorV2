@@ -63,6 +63,9 @@ To make steps 1 to 5 into only one input, I created the unit Calculator
 | `3 m + 200 cm`   | `5 m`        |
 
 ---
+
  ## Sample Image
 <img width="100" alt="image" src="https://github.com/user-attachments/assets/1acc5797-cb81-462a-be9d-f9a2b8c1956c" />
 
+---
+GenAI use Acknowledgement: GenAI was used for some ideas and inspiration (Ie. did not know what shunting-yard algorithm was before this project)
