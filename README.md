@@ -20,6 +20,19 @@ It’s designed to make complex calculations involving units fast, accurate, and
 
 ---
 
+## Versions
+This is the new and revamped version of the unit calculator. For the first version please refer to: https://github.com/Bobwillrule/Unit-Calculator
+
+In this version we implemented:
+
+- Conversion from Infix to Postfix equations using Shunting-Yard Algorithm to allow faster calculation
+- Usage of stacks for calculation and conversions
+- File division for better organization (instead of all being in main activity)
+- Usage of Enums, OOD, and maps for better data organization and processing speed
+- A more complete and modern UI
+
+---
+
 ## Example Usage
 
 | Expression        | Result        |
@@ -27,7 +40,7 @@ It’s designed to make complex calculations involving units fast, accurate, and
 | `6x6 m`          | `36 m`       |
 | `3 m + 200 cm`   | `5 m`        |
 
-
 ---
-<img width="463" height="996" alt="image" src="https://github.com/user-attachments/assets/1acc5797-cb81-462a-be9d-f9a2b8c1956c" />
+ ## Sample Image
+<img width="100" alt="image" src="https://github.com/user-attachments/assets/1acc5797-cb81-462a-be9d-f9a2b8c1956c" />
 
