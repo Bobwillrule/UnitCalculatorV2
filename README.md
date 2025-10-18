@@ -23,10 +23,13 @@ It’s designed to make complex calculations involving units fast, accurate, and
 ## Versions
 This is the new and revamped version of the unit calculator. For the first version please refer to: https://github.com/Bobwillrule/Unit-Calculator
 
+
 In this version we implemented:
 
-- Conversion from Infix to Postfix equations using Shunting-Yard Algorithm to allow faster calculation
-- Usage of stacks for calculation and conversions
+- A completely new evaluation and parsing system:
+  - Conversion from Infix to Postfix equations using Shunting-Yard Algorithm to allow faster calculation
+  - Usage of stacks for calculation and conversions
+  - (Original used a series (a lot) of conditionals to evaluate and parse the input)
 - File division for better organization (instead of all being in main activity)
 - Usage of Enums, OOD, and maps for better data organization and processing speed
 - A more complete and modern UI
