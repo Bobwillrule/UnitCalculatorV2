@@ -9,16 +9,7 @@ fun tokenize(expr: String): List<Token> {
 
     for (c in expr) {
         when {
-            c.isDigit() || c == '.' -> {
-                if (readingExponent) exponent.append(c)
-                else current.append(c)
-            }
-
-            c == '^' -> {
-                readingExponent = true
-            }
-
-            c in "+-*/" -> {
+            c == '+' || c == '-' || c == '×' || c == '÷' -> {
                 if (current.isNotEmpty()) {
                     tokens.add(Token(TokenType.NUMBER, current.toString()))
                     current.clear()
@@ -50,6 +41,15 @@ fun tokenize(expr: String): List<Token> {
                     else Token(TokenType.RPAREN, ")")
                 )
                 readingExponent = false
+            }
+
+            c == '^' -> {
+                readingExponent = true
+            }
+
+            c.isDigit() || c == '.' -> {
+                if (readingExponent) exponent.append(c)
+                else current.append(c)
             }
 
             c.isLetter() -> {

@@ -18,8 +18,8 @@ fun evaluatePostfix(tokens: List<Token>): Double {
                 val result = when (token.value) {
                     "+" -> a + b
                     "-" -> a - b
-                    "*" -> a * b
-                    "/" -> a / b
+                    "×" -> a * b
+                    "÷" -> a / b
                     "^" -> a.pow(b)
                     else -> throw IllegalArgumentException("Unknown operator: ${token.value}")
                 }

@@ -2,7 +2,6 @@ package com.example.unitcalculatorv2
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -18,6 +17,7 @@ import com.example.unitcalculatorv2.model.ExpressionEvaluator
 fun CalculatorScreen() {
     var input by remember { mutableStateOf("") }
     var result by remember { mutableStateOf("") }
+    var showNumberPage by remember { mutableStateOf(true) }
 
     fun onButtonClick(value: String) {
         when (value) {
@@ -27,13 +27,14 @@ fun CalculatorScreen() {
             }
             "⌫" -> if (input.isNotEmpty()) input = input.dropLast(1)
             "=" -> {
-            try {
-                val evalResult = ExpressionEvaluator.evaluate(input)// returns a Double
-                result = "= $evalResult"
-            } catch (e: Exception) {
-                result = "Error"
+                try {
+                    val evalResult = ExpressionEvaluator.evaluate(input) // replace with your backend
+                    result = "= $evalResult"
+                } catch (e: Exception) {
+                    result = "Error"
+                }
             }
-        }
+            "Num/Unit" -> showNumberPage = !showNumberPage // toggle pages
             else -> input += value
         }
     }
@@ -70,7 +71,27 @@ fun CalculatorScreen() {
             )
         }
 
-        // Button grid
-        CalculatorButtons(onButtonClick = ::onButtonClick)
+        // Buttons
+        val numberButtons = listOf(
+            listOf("AC", "⌫", "(", ")"),
+            listOf("7", "8", "9", "÷"),
+            listOf("4", "5", "6", "×"),
+            listOf("1", "2", "3", "-"),
+            listOf("0", ".", "=", "+")
+        )
+
+        val unitButtons = listOf(
+            listOf("AC", "⌫", "(", ")"),
+            listOf("km", "m", "cm", "÷"),
+            listOf("in", "ft", "yd", "×"),
+            listOf("mm", "mi", "yf", "-"),
+            listOf("in", "ft", "=", "+")
+        )
+
+        CalculatorButtons(
+            buttons = if (showNumberPage) numberButtons else unitButtons,
+            toggleButton = "Num/Unit",
+            onButtonClick = ::onButtonClick
+        )
     }
 }
